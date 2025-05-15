@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__content {
+  position: relative;
+  padding: 34px 36px;
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  opacity: 1;
+  text-align: left;
+  max-width: 430px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.modal__title {
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(26, 27, 34, 1);
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

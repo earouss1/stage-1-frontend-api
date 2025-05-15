@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 104px 26px;
+}
+
+.footer_signature {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(182, 188, 191, 1);
+  width: 100%;
+}
+
+.footer__to-links {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__to {
+  display: flex;
+  gap: 40px;
+  width: 163px;
+}
+
+.footer__to-home {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 1);
+  text-decoration: none;
+}
+
+.footer__to-tripleten {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 1);
+  text-decoration: none;
+}
+
+.footer__to-icons {
+  display: flex;
+  gap: 28px;
+  width: 24px;
+  height: 24px;
+}

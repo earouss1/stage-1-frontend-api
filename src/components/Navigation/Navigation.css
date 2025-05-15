@@ -1,0 +1,121 @@
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 104px 26px;
+  border-bottom: 1px solid rgba(250, 250, 250, 1);
+  position: relative;
+  height: 80px;
+}
+
+.nav__news-articles-saved {
+  background-color: rgba(250, 250, 250, 1);
+  /* font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(250, 250, 250, 1);
+  height: 24px;
+  width: 114px;
+  position: relative;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  white-space: nowrap; */
+}
+
+.nav__logo {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(250, 250, 250, 1);
+  text-decoration: none;
+}
+
+.nav__logo-news-articles_saved {
+  color: rgba(0, 0, 0, 1);
+}
+
+.nav__rechts {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 42px;
+}
+
+.nav__rechts-home {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(250, 250, 250, 1);
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.nav__rechts-home_saved {
+  color: rgba(0, 0, 0, 1);
+}
+
+.nav__rechts-button-to-signin {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 100px;
+  background: none;
+  border: 1px solid rgba(250, 250, 250, 1);
+  padding: 12px 12px;
+  color: rgba(250, 250, 250, 1);
+  width: 176px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.nav__rechts_news-articles-signin {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav__rechts_news-articles-saved {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  height: 24px;
+  width: 114px;
+  position: relative;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  white-space: nowrap;
+}
+
+.nav__rechts_news-articles-saved_home {
+  color: rgba(250, 250, 250, 1);
+}
+
+.nav__rechts-button-signout {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 100px;
+  color: rgba(0, 0, 0, 1);
+  width: 112px;
+  height: 40px;
+  background-color: transparent;
+}
+
+.nav__rechts-button-signout_home {
+  border: 1px solid rgba(250, 250, 250, 1);
+  color: rgba(250, 250, 250, 1);
+  background-color: transparent;
+}
+
+.nav__rechts-button-image {
+  width: 16px;
+  height: 16px;
+  margin-left: 13px;
+}
