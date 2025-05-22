@@ -13,6 +13,7 @@ import HeaderSavedNewsArticles from "../HeaderSavedNewsArticles/HeaderSavedNewsA
 // import modals
 import SignInModal from "../SignInModal/SignInModal";
 import SignUpModal from "../SignUpModal/SignUpModal";
+import SuccessfulSignUpModal from "../SuccessfulSignUpModal/SuccessfulSignUpModal";
 
 // import APIs, Constants and Contexts
 import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
@@ -33,13 +34,17 @@ function App() {
   const [savedNewsArticles, setSavedNewsArticles] = useState([]);
   // const [hasSearchedNewsArticles, setHasSearchedNewsArticles] = useState(false);
   const [newsArticlesCounts, setNewsArticlesCounts] = useState(0);
-
+  const [keyword, setKeyword] = useState("");
+  const [keywords, setKeywords] = useState([]);
   // useNavigate
   const navigate = useNavigate();
 
   //handle functionality of the app
   function handleSearchNewsArticles(news) {
-    console.log(news);
+    console.log("this is the news", news);
+    setKeyword(news);
+    setKeywords([...keywords, news]);
+
     setIsLoading(true);
     getNewsArticles({ keyword: news })
       .then((res) => {
@@ -88,6 +93,7 @@ function App() {
     if (!currentUser) {
       return;
     }
+    console.log(keyword);
     // Check if article is already saved
     const checkIfSavedNewsArticles = savedNewsArticles.some(
       (news) => news.title === article.title
@@ -99,6 +105,7 @@ function App() {
     }
     // If not
     //   then save
+    article.keyword = keyword;
     saveNewsArticles(article).then(() => {
       console.log(article);
       console.log([...savedNewsArticles, article]);
@@ -140,6 +147,10 @@ function App() {
 
   const handleSignUpModal = () => {
     setActiveModal("sign-up");
+  };
+
+  const handleSuccessfulSignUpModal = () => {
+    setActiveModal("sign-up-successfully");
   };
 
   // useEffect CurrentUser
@@ -187,6 +198,7 @@ function App() {
                     isLoggedIn={isLoggedIn}
                     onSignUpClick={handleSignUpModal}
                     handleSignOut={handleSignOut}
+                    keywords={keywords}
                   />
                   <Main
                     cardList={newsArticlesSearchedResults}
@@ -197,6 +209,7 @@ function App() {
                     searchedNewsArticles={searchedNewsArticles}
                     handleDeleteNewsArticles={handleDeleteNewsArticles}
                     newsArticlesCounts={newsArticlesCounts}
+                    keywords={keywords}
                   />
                 </>
               }
@@ -211,6 +224,7 @@ function App() {
                     handleSignOut={handleSignOut}
                     currentUser={currentUser}
                     newsArticlesCounts={newsArticlesCounts}
+                    keywords={keywords}
                   />
                   <MainSavedNewsArticles
                     isLoggedIn={isLoggedIn}
@@ -220,6 +234,7 @@ function App() {
                     searchedNewsArticles={searchedNewsArticles}
                     handleNewsArticlesCounts={handleNewsArticlesCounts}
                     newsArticlesCounts={newsArticlesCounts}
+                    keywords={keywords}
                   />
                 </>
               }
@@ -239,6 +254,12 @@ function App() {
             onSignUpClick={handleSignUpModal}
             onSignInClick={handleSignInModal}
             handleSignUp={handleSignUp}
+          />
+          <SuccessfulSignUpModal
+            isOpen={activeModal === "sign-up-successfully"}
+            onSuccessfulSignUpModal={handleSuccessfulSignUpModal}
+            onClose={closeActiveModal}
+            handleSignIn={handleSignIn}
           />
         </div>
       </div>

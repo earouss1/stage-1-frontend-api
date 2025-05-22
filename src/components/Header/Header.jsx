@@ -13,7 +13,7 @@ function Header({
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
-    <header className="header">
+    <header className="header header_type_home">
       <div className="header__home">
         <Navigation
           onSignInClick={onSignInClick}

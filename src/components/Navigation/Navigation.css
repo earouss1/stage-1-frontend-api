@@ -106,16 +106,80 @@
   width: 112px;
   height: 40px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .nav__rechts-button-signout_home {
   border: 1px solid rgba(250, 250, 250, 1);
   color: rgba(250, 250, 250, 1);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .nav__rechts-button-image {
   width: 16px;
   height: 16px;
   margin-left: 13px;
+}
+
+.nav-mobile-menu__homepage-button {
+  background-image: url(../../images/menuHomePage.png);
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  /* display: none; */
+  border: none;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.nav-mobile-menu__savednews-button {
+  background-image: url(../../images/menuSavedNewsPage.png);
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  /* display: none; */
+  border: none;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 770px) {
+  .nav {
+    padding: 0 40px;
+    justify-content: space-between;
+  }
+
+  .nav__rechts-button-to-signin {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .nav {
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  .nav__logo {
+    font-size: 16px;
+    height: 24px;
+  }
+
+  .nav__rechts {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .nav-mobile-menu__homepage-button {
+    visibility: visible;
+  }
+
+  .nav-mobile-menu__savednews-button {
+    visibility: visible;
+  }
 }

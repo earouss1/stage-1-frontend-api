@@ -1,4 +1,3 @@
-import React from "react";
 import "./SignUpModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
@@ -8,6 +7,7 @@ function SignUpModal({
   activeModal,
   onClose,
   handleSignUp,
+  onSuccessfulSignUpModal,
   onSignInClick,
 }) {
   const defaultValues = {
@@ -16,11 +16,15 @@ function SignUpModal({
     username: "",
   };
 
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, isValid, errors, resetForm, handleChange } =
+    useForm(defaultValues);
 
-  const handleSignInSubmit = (event) => {
+  const handleSignUpSubmit = (event) => {
     event.preventDefault();
-    handleLogin(values);
+    if (isValid) {
+      handleSignUp(values);
+    }
+    resetForm(defaultValues);
   };
 
   return (
@@ -28,7 +32,7 @@ function SignUpModal({
       title="Sign up"
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={handleSignInSubmit}
+      onSubmit={handleSignUpSubmit}
       activeModal={activeModal}
       handleSignUp={handleSignUp}
     >
@@ -74,8 +78,17 @@ function SignUpModal({
           autoComplete="on"
         />
       </label>
+      {errors.email && (
+        <span className="modal__errors modal__errors-signup">Invalid email address</span>
+      )}
       <div className="modal__buttons">
-        <button className="modal__buttons-button-submit" type="submit">
+        <button
+          className={`modal__buttons-button-submit ${
+            !isValid ? "modal__buttons-button-submit_disabled" : ""
+          }`}
+          type="submit"
+          onClick={onSuccessfulSignUpModal}
+        >
           Sign up
         </button>
         <div className="modal__buttons-text-and-button">

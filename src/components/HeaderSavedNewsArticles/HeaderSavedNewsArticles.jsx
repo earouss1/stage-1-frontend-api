@@ -7,27 +7,9 @@ function HeaderSavedNewsArticles({
   isLoggedIn,
   savedNewsArticles = [],
   handleSignOut,
+  keywords,
 }) {
   const { currentUser } = useContext(CurrentUserContext);
-
-  const keywordCounts = {};
-  savedNewsArticles.forEach((n) => {
-    if (!n.keyword) {
-      return;
-    }
-    keywordCounts[n.keyword] = (keywordCounts[n.keyword] || 0) + 1;
-  });
-
-  const sortedKeywords = Object.entries(keywordCounts)
-    .sort(([, n], [, m]) => m - n)
-    .map(([keyword]) => keyword);
-
-  const formattedSortedKeywords =
-    sortedKeywords.length > 3
-      ? `${sortedKeywords.slice(0, 3).join(", ")}, and ${
-          sortedKeywords.length - 3
-        } others`
-      : sortedKeywords.join(", ");
 
   return (
     <header className="header header__for_saved-articles">
@@ -35,13 +17,17 @@ function HeaderSavedNewsArticles({
       <div className="header__for-saved-articles">
         <h2 className="header__for-saved-articles-title">Saved articles</h2>
         <p className="header__for-saved-articles-text">
-          {currentUser.usernane}, you have {savedNewsArticles.lenght} saved
+          {currentUser.username}, you have {savedNewsArticles.length} saved
           articles
         </p>
         <p className="header__for-saved-articles-keywords">
           By keywords:{" "}
           <span className="header__for-saved-articles-span-keywords">
-            {formattedSortedKeywords}
+            {keywords.length <= 2
+              ? keywords.join(", ")
+              : `${keywords[0]}, ${keywords[1]}, and ${
+                  keywords.length - 2
+                } others`}
           </span>
         </p>
       </div>

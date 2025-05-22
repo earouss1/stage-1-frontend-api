@@ -20,6 +20,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  margin-bottom: 5px;
 }
 
 .modal__input::placeholder {
@@ -35,6 +36,7 @@
   outline: none;
   box-shadow: 0 2px 4px rgba(47, 113, 229, 0.3);
   border-bottom: 2px solid rgba(47, 113, 229, 1);
+  color: rgba(0, 0, 0, 1);
 }
 
 .modal__buttons {
@@ -54,8 +56,13 @@
   height: 64px;
   border: none;
   border-radius: 100px;
-  background-color: rgba(230, 232, 235, 1);
+  background-color: rgba(47, 113, 229, 1);
   color: rgba(182, 188, 191, 1);
+  cursor: pointer;
+}
+
+.modal__bottons-button-submit_disabled {
+  background-color: rgba(230, 232, 235, 1);
 }
 
 .modal__buttons-text-and-button {
@@ -88,4 +95,14 @@
   background: transparent;
   border: none;
   color: rgba(47, 113, 229, 1);
+}
+
+.modal__errors {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 0, 0, 1);
 }

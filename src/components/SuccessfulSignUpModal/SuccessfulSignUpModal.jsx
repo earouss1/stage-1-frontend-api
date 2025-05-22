@@ -1,6 +1,5 @@
-import React from "react";
-import "./SuccessfulSignUpModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./SuccessfulSignUpModal.css";
 
 function SuccessfulSignUpModal({ isOpen, onClose, handleSignIn }) {
   return (

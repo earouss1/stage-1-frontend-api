@@ -20,17 +20,17 @@ function Main({
   console.log(newsArticlesCounts, displayedNewsArticles.length);
   return (
     <main className={`${searchedNewsArticles ? "main" : ""}`}>
+      {isLoading && <Preloader />}
+      {searchedNewsArticles && displayedNewsArticles.length === 0 && (
+        <div className="main__news-cards-notfound">
+          <img
+            src={NotFoundWithText}
+            alt="Not Found"
+            className="main__news-cards-notfound-image"
+          />
+        </div>
+      )}
       <section className="main__news-cards">
-        {isLoading && <Preloader />}
-        {searchedNewsArticles && displayedNewsArticles.length === 0 && (
-          <div className="main__news-cards-notfound">
-            <img
-              src={NotFoundWithText}
-              alt="Not Found"
-              className="main__news-cards-notfound-image"
-            />
-          </div>
-        )}
         {displayedNewsArticles.length > 0 && (
           <p className="main__news-cards-title">Search results</p>
         )}
