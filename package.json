@@ -1,6 +1,7 @@
 {
   "name": "final_project_newsexplorer",
   "private": true,
+  "homepage": " https://earouss1.github.io/stage-1-frontend-api/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
