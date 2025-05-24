@@ -7,6 +7,9 @@ function SuccessfulSignUpModal({ isOpen, onClose, handleSignIn }) {
       title="Registration successfully completed!"
       isOpen={isOpen}
       onClose={onClose}
+      // onSubmit={() => {
+      //   handleSignIn();
+      // }}
     >
       <button className="modal__buttons-submit modal__button-successful">
         Sign in

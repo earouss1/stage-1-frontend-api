@@ -34,7 +34,7 @@ function SignUpModal({
       onClose={onClose}
       onSubmit={handleSignUpSubmit}
       activeModal={activeModal}
-      handleSignUp={handleSignUp}
+      // handleSignUp={handleSignUp}
     >
       <label htmlFor="email" className="modal__label">
         Email{""}
@@ -79,7 +79,9 @@ function SignUpModal({
         />
       </label>
       {errors.email && (
-        <span className="modal__errors modal__errors-signup">Invalid email address</span>
+        <span className="modal__errors modal__errors-signup">
+          Invalid email address
+        </span>
       )}
       <div className="modal__buttons">
         <button
