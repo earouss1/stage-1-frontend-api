@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./HeaderSavedNewsArticles.css";
 import Navigation from "../Navigation/Navigation";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
