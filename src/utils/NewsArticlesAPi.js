@@ -2,7 +2,10 @@ import { handleRequest } from "./APi";
 import { APiKey } from "./Constants";
 
 export const getNewsArticles = ({ keyword }) => {
-  const url = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`;
+  const url =
+    process.env.NODE_ENV === "production"
+      ? `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
+      : `https://nomoreparties.co/news/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`;
   return handleRequest(url);
 };
 
