@@ -13,7 +13,7 @@ import HeaderSavedNewsArticles from "../HeaderSavedNewsArticles/HeaderSavedNewsA
 // import modals
 import SignInModal from "../SignInModal/SignInModal";
 import SignUpModal from "../SignUpModal/SignUpModal";
-// import SuccessfulSignUpModal from "../SuccessfulSignUpModal/SuccessfulSignUpModal";
+import SuccessfulSignUpModal from "../SuccessfulSignUpModal/SuccessfulSignUpModal";
 
 // import APIs, Constants and Contexts
 import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
@@ -149,9 +149,9 @@ function App() {
     setActiveModal("sign-up");
   };
 
-  // const handleSuccessfulSignUpModal = () => {
-  //   setActiveModal("sign-up-successfully");
-  // };
+  const handleSuccessfulSignUpModal = () => {
+    setActiveModal("sign-up-successfully");
+  };
 
   // useEffect CurrentUser
   useEffect(() => {
@@ -254,13 +254,13 @@ function App() {
             onSignUpClick={handleSignUpModal}
             onSignInClick={handleSignInModal}
             handleSignUp={handleSignUp}
-            // onSuccessfulSignUpModal={handleSuccessfulSignUpModal}
+            onSuccessfulSignUpModal={handleSuccessfulSignUpModal}
           />
-          {/* <SuccessfulSignUpModal
+          <SuccessfulSignUpModal
             isOpen={activeModal === "sign-up-successfully"}
             onClose={closeActiveModal}
             handleSignIn={handleSignIn}
-          /> */}
+          />
         </div>
       </div>
     </CurrentUserContext.Provider>
