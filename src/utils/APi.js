@@ -1,4 +1,7 @@
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://nomoreparties.co/news/v2/everything"
+    : "http://localhost:3001";
 
 export const handleResponse = (res) => {
   if (res.ok) {
