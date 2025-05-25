@@ -2,7 +2,7 @@ import { APiKey } from "./Constants";
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? `https://nomoreparties.co/news/v2/everythingq=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
+    ? `https://nomoreparties.co/news/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
     : "http://localhost:3001";
 
 export const handleResponse = (res) => {
