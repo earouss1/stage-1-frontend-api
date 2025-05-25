@@ -4,8 +4,11 @@ import { APiKey } from "./Constants";
 export const getNewsArticles = ({ keyword }) => {
   const url =
     process.env.NODE_ENV === "production"
-      ? `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
-      : `https://nomoreparties.co/news/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`;
+      ? `https://nomoreparties.co/news/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
+      : `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`;
+  // process.env.NODE_ENV === "production"
+  //   ? `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`
+  //   : `https://nomoreparties.co/news/v2/everything?q=${keyword}&apiKey=${APiKey}&from=${fromDate()}&to=${currentDate()}$pageSize=100`;
   return handleRequest(url);
 };
 
