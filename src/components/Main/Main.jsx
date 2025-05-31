@@ -1,4 +1,3 @@
-import React from "react";
 import "./Main.css";
 import NewsCardArticles from "../NewsCardArticles/NewsCardArticles";
 import About from "../About/About";
@@ -32,10 +31,10 @@ function Main({
       )}
       <section className="main__news-cards">
         {displayedNewsArticles.length > 0 && (
-          <p className="main__news-cards-title">Search results</p>
+          <h2 className="main__news-cards-title">Search results</h2>
         )}
 
-        <ul className="news__cards-list">
+        <ul className="main__news-cards-lists">
           <NewsCardArticles
             cardList={cardList}
             displayedNewsArticles={displayedNewsArticles}

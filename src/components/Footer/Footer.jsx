@@ -7,7 +7,7 @@ import facebookIcon from "../../images/facebook.png";
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer_signature">
+      <p className="footer__signature">
         &#169; 2025 Supersite, Powered by News API
       </p>
       <div className="footer__to-links">

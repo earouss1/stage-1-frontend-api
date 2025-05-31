@@ -1,6 +1,5 @@
-import React from "react";
 import "./About.css";
-import picofauthor from "../../images/img.jpg";
+import picofauthor from "../../images/img1.jpg";
 
 function About() {
   return (
@@ -19,7 +18,8 @@ function About() {
           Grid, Media queries, the use of BEM methodology. In addition, he
           acquired full knowledge Git, GitHub, Repositories, and IDE such as VS
           Code.
-          <span className="about__content-text-span"></span>
+        </p>
+        <p className="about__content-sub-text">
           This App is built using React.jsx (Vite)...
         </p>
       </div>

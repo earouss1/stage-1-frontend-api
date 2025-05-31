@@ -5,6 +5,7 @@ import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
 import signoutButton from "../../images/signout.png";
 import logoutButton from "../../images/logout.png";
 import ToggleMobileMenu from "../ToggleMobileMenu/ToggleMobileMenu";
+import { NavLink } from "react-router-dom";
 
 function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
   const { currentUser } = useContext(CurrentUserContext);
@@ -21,24 +22,24 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
         isNewsArticlesSavedPage ? "nav__news-articles-saved" : ""
       }`}
     >
-      <Link
+      <NavLink
         to="/"
         className={`nav__logo ${
           isNewsArticlesSavedPage ? "nav__logo-news-articles_saved" : ""
         }`}
       >
         NewsExplorer
-      </Link>
+      </NavLink>
 
       <div className="nav__rechts">
-        <Link
+        <NavLink
           to="/"
           className={`nav__rechts-home ${
-            isNewsArticlesSavedPage ? "nav__rechts-home_saved" : ""
+            isNewsArticlesSavedPage ? "nav__rechts-home_active" : ""
           }`}
         >
           Home
-        </Link>
+        </NavLink>
         {!isLoggedIn && isHomeNewsArticlesPage ? (
           <button
             onClick={onSignInClick}
@@ -49,16 +50,16 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
           </button>
         ) : (
           <div className="nav__rechts_news-articles-signin">
-            <Link
+            <NavLink
               to="/saved-news"
               className={`nav__rechts_news-articles-saved ${
                 isLoggedIn && isHomeNewsArticlesPage
-                  ? "nav__rechts_news-articles-saved_home"
+                  ? "nav__rechts_news-articles-saved_active"
                   : ""
               }`}
             >
               Saved articles
-            </Link>
+            </NavLink>
             <button
               className={`nav__rechts-button-signout ${
                 isLoggedIn && isHomeNewsArticlesPage
@@ -83,7 +84,7 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
       </div>
       {currentUser && isHomeNewsArticlesPage && (
         <button
-          className="nav-mobile-menu__homepage-button"
+          className="nav-mobile-menu__toggle-button"
           onClick={toggleMobileMenu}
         ></button>
       )}
@@ -102,7 +103,7 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
           isLoggedIn={isLoggedIn}
           isHomeNewsArticlesPage={isHomeNewsArticlesPage}
           isNewsArticlesSavedPage={isNewsArticlesSavedPage}
-          currentUser={currentUser.username}
+          currentUser={currentUser?.username}
         />
       )}
     </nav>

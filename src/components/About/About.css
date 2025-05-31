@@ -4,6 +4,7 @@
   gap: 56px;
   padding: 80px 104px;
   margin: 0;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .about__image {
@@ -21,10 +22,11 @@
 }
 
 .about__content-title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
+  letter-spacing: 0px;
   text-align: left;
   margin-bottom: 24px;
   height: auto;
@@ -32,18 +34,26 @@
 }
 
 .about__content-text {
-  font-family: "Roboto";
+  font-family: "Roboto", "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  letter-spacing: 0px;
   height: auto;
   text-align: left;
   color: rgba(26, 27, 34, 1);
 }
 
-.about__content-text-span {
-  display: block;
-  height: 24px;
+.about__content-sub-text {
+  font-family: "Roboto", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  height: auto;
+  text-align: left;
+  color: rgba(26, 27, 34, 1);
+  padding-top: 20px;
 }
 
 @media screen and (min-width: 769px) and (max-width: 915px) {
@@ -58,9 +68,10 @@
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 770px) {
   .about {
     padding: 40px 40px 62px 40px;
+    gap: 32px;
   }
   .about__image {
     max-width: 232px;
@@ -76,13 +87,20 @@
 @media screen and (max-width: 392px) {
   .about {
     flex-direction: column;
-    padding: 32px 24px;
+    padding: 32px 16px 106px;
   }
 
   .about__image {
     max-width: 272px;
     max-height: 272px;
     margin-bottom: 0;
+  }
+
+  .about__content {
+    width: 288px;
+    margin-top: 0;
+    /* padding-left: 16px;
+    padding-right: 16px; */
   }
 
   .about__content-title {

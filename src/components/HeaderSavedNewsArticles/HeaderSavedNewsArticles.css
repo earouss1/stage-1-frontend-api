@@ -1,6 +1,6 @@
 .header__for_saved-articles {
   color: rgba(0, 0, 0, 1);
-  background-color: rgba(250, 250, 250, 1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header__for-saved-articles {
@@ -11,12 +11,12 @@
   width: 100%;
   box-sizing: border-box;
   /* max-width: 712px; */
-  padding: 40px 104px 80px;
+  padding: 40px 104px 56px;
   background-color: rgba(250, 250, 250, 1);
 }
 
 .header__for-saved-articles-title {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif, serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -27,7 +27,7 @@
 }
 
 .header__for-saved-articles-text {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", sans-serif, serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -38,7 +38,7 @@
 }
 
 .header__for-saved-articles-keywords {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -67,6 +67,11 @@
   }
 
   .header__for-saved-articles-title {
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .header__for-saved-articles-text {
     font-size: 30px;
     line-height: 34px;
   }
@@ -75,5 +80,15 @@
 @media screen and (max-width: 325px) {
   .header__for-saved-articles {
     padding: 8px 16px 32px;
+  }
+
+  .header__for-saved-articles-title {
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .header__for-saved-articles-text {
+    font-size: 30px;
+    line-height: 34px;
   }
 }

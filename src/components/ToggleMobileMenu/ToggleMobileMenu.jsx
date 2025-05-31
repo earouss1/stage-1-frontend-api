@@ -1,20 +1,20 @@
 import "./ToggleMobileMenu.css";
 import { Link } from "react-router-dom";
 import closeButton from "../../images/back.png";
-// import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
-// import { useContext } from "react";
-// import signOutButton from "../../images/signout.png";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
+import { useContext } from "react";
+import signOutButton from "../../images/signout.png";
 
 function ToggleMobileMenu({
   isShowMobileMenu,
   onSignInClick,
   toggleMobileMenu,
-  //   isNewsArticlesSavedPage,
-  //   isHomeNewsArticlesPage,
-  //   handleSignout,
-  //   isLoggedIn,
+  isNewsArticlesSavedPage,
+  isHomeNewsArticlesPage,
+  handleSignout,
+  isLoggedIn,
 }) {
-  //   const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <nav
@@ -22,31 +22,78 @@ function ToggleMobileMenu({
         isShowMobileMenu ? "nav-mobile-menu_active" : ""
       }`}
     >
-      <div className="nav-mobile-menu-links">
-        <h2 className="nav-mobile-menu__logo">NewsExplorer</h2>
+      <button
+        className="nav-mobile-menu__close-button"
+        type="button"
+        onClick={() => toggleMobileMenu()}
+      >
+        <img
+          src={closeButton}
+          alt="Close Button"
+          className="nav-mobile-menu__closebutton"
+        />
+      </button>
+      {isLoggedIn ? (
+        <ul className="nav-mobile-menu__links">
+          <li className="nav-mobile-menu__logo">NewsExplorer</li>
+          <li>
+            <Link
+              to="/"
+              className={`nav-mobile-menu__rechts ${
+                isHomeNewsArticlesPage ? "nav-mobile-menu__rechts_home" : ""
+              }`}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/saved-news"
+              className={`nav-mobile-menu__rechts ${
+                isNewsArticlesSavedPage
+                  ? "nav-mobile-menu__rechts_savednews"
+                  : ""
+              }`}
+            >
+              Saved articles
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        <ul className="nav-mobile-menu__links">
+          <li className="nav-mobile-menu__logo">NewsExplorer</li>
+          <li>
+            <Link
+              to="/"
+              className={`nav-mobile-menu__rechts ${
+                isHomeNewsArticlesPage ? "nav-mobile-menu__rechts_home" : ""
+              }`}
+            >
+              Home
+            </Link>
+          </li>
+        </ul>
+      )}
+      {isLoggedIn ? (
         <button
-          className="nav-mobile-menu__close-button"
-          type="button"
-          onClick={() => toggleMobileMenu()}
+          className="nav-mobile-menu__rechts-signout-button"
+          onClick={handleSignout}
         >
+          {currentUser.username}
           <img
-            src={closeButton}
-            alt="Close Button"
-            className="nav-mobile-menu__closebutton"
+            src={signOutButton}
+            alt="Sign-Out Button"
+            className="nav-mobile-menu__rechts-signout-button-icon"
           />
         </button>
-      </div>
-      <div className="nav-mobile-menu__rechts">
-        <Link to="/" className="nav-mobile-menu__rechts-home">
-          Home
-        </Link>
+      ) : (
         <button
           className="nav-mobile-menu__rechts-signin-button"
           onClick={onSignInClick}
         >
           Sign in
         </button>
-      </div>
+      )}
     </nav>
   );
 }

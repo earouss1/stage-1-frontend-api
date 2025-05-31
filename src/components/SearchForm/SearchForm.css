@@ -8,7 +8,6 @@
   height: 64px;
   margin-bottom: 80px;
   border-radius: 100px;
-  /* padding: 20px 56px; */
 }
 
 .form {
@@ -68,7 +67,7 @@
 @media screen and (max-width: 780px) {
   .form__articles {
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     height: 56px;
     width: 448px;
   }

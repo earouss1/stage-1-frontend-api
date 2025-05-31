@@ -15,7 +15,7 @@ function HeaderSavedNewsArticles({
     <header className="header header__for_saved-articles">
       <Navigation isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} />
       <div className="header__for-saved-articles">
-        <h2 className="header__for-saved-articles-title">Saved articles</h2>
+        <h1 className="header__for-saved-articles-title">Saved articles</h1>
         <p className="header__for-saved-articles-text">
           {currentUser.username}, you have {savedNewsArticles.length} saved
           articles

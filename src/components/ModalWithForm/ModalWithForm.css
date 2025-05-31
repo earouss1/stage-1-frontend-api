@@ -58,8 +58,11 @@
 }
 
 @media screen and (max-width: 780px) {
-  .modal__content {
-    padding: 20px;
+  .modal {
+    width: 100%;
+  }
+
+  .modal__form {
     max-width: 100%;
   }
 }
@@ -68,6 +71,7 @@
   .modal {
     align-items: flex-start;
     margin-top: 56px;
+    z-index: 1002;
   }
 
   .modal__close-button {

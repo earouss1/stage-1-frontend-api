@@ -7,10 +7,15 @@
 
 @media screen and (max-width: 780px) {
   .selected__news-articles {
-    /* grid-template-columns: repeat(auto-fit, minmax(224px, 1fr)); */
-    gap: 8px;
+    /* grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    gap: 8px; */
     padding-left: 40px;
     padding-right: 40px;
+    gap: 8px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
   }
 }
 

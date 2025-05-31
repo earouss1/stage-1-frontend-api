@@ -20,7 +20,7 @@ function NewsCardArticles({
   console.log(newsArticlesCounts);
 
   return (
-    <div className="selected__news-articles">
+    <ul className="selected__news-articles">
       {displayedNewsArticles.map((item, index) => {
         return (
           <NewsCard
@@ -31,7 +31,7 @@ function NewsCardArticles({
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
 
