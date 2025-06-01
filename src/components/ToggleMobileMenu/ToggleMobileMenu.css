@@ -13,7 +13,7 @@
   left: 0;
   top: 0;
   z-index: 999;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .nav-mobile-menu__close-button {
@@ -137,4 +137,14 @@
   height: 56px;
   border-color: rgba(255, 255, 255, 1);
   cursor: pointer;
+}
+
+@media screen and (max-width: 325px) {
+  .nav-mobile-menu__rechts_home::after {
+    height: 0;
+  }
+
+  .nav-mobile-menu__rechts_savednews::after {
+    height: 0;
+  }
 }

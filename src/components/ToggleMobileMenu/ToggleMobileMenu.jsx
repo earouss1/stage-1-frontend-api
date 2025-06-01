@@ -22,20 +22,21 @@ function ToggleMobileMenu({
         isShowMobileMenu ? "nav-mobile-menu_active" : ""
       }`}
     >
-      <button
-        className="nav-mobile-menu__close-button"
-        type="button"
-        onClick={() => toggleMobileMenu()}
-      >
-        <img
-          src={closeButton}
-          alt="Close Button"
-          className="nav-mobile-menu__closebutton"
-        />
-      </button>
+      <div className="nav-mobile-menu__logo-and-button">
+        <button
+          className="nav-mobile-menu__close-button"
+          type="button"
+          onClick={() => toggleMobileMenu()}
+        >
+          <img
+            src={closeButton}
+            alt="Close Button"
+            className="nav-mobile-menu__closebutton"
+          />
+        </button>
+      </div>
       {isLoggedIn ? (
         <ul className="nav-mobile-menu__links">
-          <li className="nav-mobile-menu__logo">NewsExplorer</li>
           <li>
             <Link
               to="/"

@@ -35,7 +35,7 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
         <NavLink
           to="/"
           className={`nav__rechts-home ${
-            isNewsArticlesSavedPage ? "nav__rechts-home_active" : ""
+            !isNewsArticlesSavedPage ? "nav__rechts-home_active" : ""
           }`}
         >
           Home
@@ -53,7 +53,7 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
             <NavLink
               to="/saved-news"
               className={`nav__rechts_news-articles-saved ${
-                isLoggedIn && isHomeNewsArticlesPage
+                isLoggedIn && !isHomeNewsArticlesPage
                   ? "nav__rechts_news-articles-saved_active"
                   : ""
               }`}
