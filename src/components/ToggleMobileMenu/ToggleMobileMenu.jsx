@@ -23,6 +23,7 @@ function ToggleMobileMenu({
       }`}
     >
       <div className="nav-mobile-menu__logo-and-button">
+        <li className="nav-mobile-menu__logo">NewsExplorer</li>
         <button
           className="nav-mobile-menu__close-button"
           type="button"
@@ -62,7 +63,7 @@ function ToggleMobileMenu({
         </ul>
       ) : (
         <ul className="nav-mobile-menu__links">
-          <li className="nav-mobile-menu__logo">NewsExplorer</li>
+          {/* <li className="nav-mobile-menu__logo">NewsExplorer</li> */}
           <li>
             <Link
               to="/"
