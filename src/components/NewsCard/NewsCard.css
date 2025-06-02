@@ -332,8 +332,8 @@
 
 @media screen and (max-width: 480px) {
   .newscard {
-    max-width: 90%;
     width: 288px;
+    max-height: none;
   }
   .newscard__image {
     max-height: 196px;

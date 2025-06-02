@@ -7,14 +7,21 @@ import logoutButton from "../../images/logout.png";
 import ToggleMobileMenu from "../ToggleMobileMenu/ToggleMobileMenu";
 import { NavLink } from "react-router-dom";
 
-function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
+function Navigation({ onSignInClick, isLoggedIn, handleSignOut, activeModal }) {
   const { currentUser } = useContext(CurrentUserContext);
   const location = useLocation();
   const isHomeNewsArticlesPage = location.pathname === "/";
   const isNewsArticlesSavedPage = location.pathname === "/saved-news";
 
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
-  const toggleMobileMenu = () => setIsShowMobileMenu(!isShowMobileMenu);
+  // const toggleMobileMenu = () => setIsShowMobileMenu(!isShowMobileMenu);
+
+  const toggleMobileMenu = () => {
+    if (activeModal) {
+      setIsShowMobileMenu(null);
+    }
+    return setIsShowMobileMenu(!isShowMobileMenu);
+  };
 
   return (
     <nav

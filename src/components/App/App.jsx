@@ -199,6 +199,7 @@ function App() {
                     onSignUpClick={handleSignUpModal}
                     handleSignOut={handleSignOut}
                     keywords={keywords}
+                    activeModal={activeModal}
                   />
                   <Main
                     cardList={newsArticlesSearchedResults}

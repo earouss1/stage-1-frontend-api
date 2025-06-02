@@ -22,7 +22,7 @@ function ToggleMobileMenu({
         isShowMobileMenu ? "nav-mobile-menu_active" : ""
       }`}
     >
-      <div className="nav-mobile-menu__logo-and-button">
+      <ul className="nav-mobile-menu__logo-and-button">
         <li className="nav-mobile-menu__logo">NewsExplorer</li>
         <button
           className="nav-mobile-menu__close-button"
@@ -35,7 +35,7 @@ function ToggleMobileMenu({
             className="nav-mobile-menu__closebutton"
           />
         </button>
-      </div>
+      </ul>
       {isLoggedIn ? (
         <ul className="nav-mobile-menu__links">
           <li>
@@ -79,7 +79,10 @@ function ToggleMobileMenu({
       {isLoggedIn ? (
         <button
           className="nav-mobile-menu__rechts-signout-button"
-          onClick={handleSignout}
+          onClick={() => {
+            toggleMobileMenu();
+            handleSignout();
+          }}
         >
           {currentUser.username}
           <img
@@ -91,7 +94,10 @@ function ToggleMobileMenu({
       ) : (
         <button
           className="nav-mobile-menu__rechts-signin-button"
-          onClick={onSignInClick}
+          onClick={() => {
+            toggleMobileMenu();
+            onSignInClick();
+          }}
         >
           Sign in
         </button>
