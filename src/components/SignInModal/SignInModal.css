@@ -1,5 +1,5 @@
 .modal__label {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif, serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 100%;
@@ -8,7 +8,7 @@
 }
 
 .modal__input {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif, serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -44,7 +44,7 @@
 }
 
 .modal__bottons-button-submit {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif, serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -74,7 +74,7 @@
 }
 
 .modal__buttons-text {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -85,7 +85,7 @@
 }
 
 .modal__buttons-button {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -98,7 +98,7 @@
 }
 
 .modal__errors {
-  font-family: "Inter";
+  font-family: "Inter", "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 100%;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./NewsCard.css";
 import defaultnewsimage from "../../images/defaultimage.jpg";
 import { useLocation } from "react-router-dom";

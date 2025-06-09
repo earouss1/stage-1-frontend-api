@@ -2,8 +2,9 @@ import "./Main.css";
 import NewsCardArticles from "../NewsCardArticles/NewsCardArticles";
 import About from "../About/About";
 import Preloader from "../Preloader/Preloader";
-import NotFoundWithText from "../../images/NotFoundWithText.png";
+// import NotFoundWithText from "../../images/NotFoundWithText.png";
 // import { defaultArticles } from "../../utils/constants";
+import NotFoundImage from "../../images/NotFound.svg";
 
 function Main({
   cardList,
@@ -23,27 +24,28 @@ function Main({
       {searchedNewsArticles && displayedNewsArticles.length === 0 && (
         <div className="main__news-cards-notfound">
           <img
-            src={NotFoundWithText}
+            src={NotFoundImage}
             alt="Not Found"
             className="main__news-cards-notfound-image"
           />
+          <h3 className="main__news-cards-notfound-text">Nothing found</h3>
+          <p className="main__news-cards-notfound-subtext">
+            Sorry, but nothing matched your search terms.
+          </p>
         </div>
       )}
       <section className="main__news-cards">
         {displayedNewsArticles.length > 0 && (
           <h2 className="main__news-cards-title">Search results</h2>
         )}
-
-        <ul className="main__news-cards-lists">
-          <NewsCardArticles
-            cardList={cardList}
-            displayedNewsArticles={displayedNewsArticles}
-            isLoggedIn={isLoggedIn}
-            handleSavedNewsArticles={handleSavedNewsArticles}
-            newsArticlesCounts={newsArticlesCounts}
-            handleDeleteNewsArticles={handleDeleteNewsArticles}
-          />
-        </ul>
+        <NewsCardArticles
+          cardList={cardList}
+          displayedNewsArticles={displayedNewsArticles}
+          isLoggedIn={isLoggedIn}
+          handleSavedNewsArticles={handleSavedNewsArticles}
+          newsArticlesCounts={newsArticlesCounts}
+          handleDeleteNewsArticles={handleDeleteNewsArticles}
+        />
         {newsArticlesCounts < cardList.length && (
           <button
             className="main__news-cards-button"

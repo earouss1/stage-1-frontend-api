@@ -1,4 +1,3 @@
-import React from "react";
 import "./NewsCardArticles.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useLocation } from "react-router-dom";

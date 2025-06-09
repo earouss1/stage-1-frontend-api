@@ -24,6 +24,10 @@
   padding: 16px;
 }
 
+.nav-mobile-menu__logo {
+  color: rgba(255, 255, 255, 1);
+}
+
 .nav-mobile-menu__close-button {
   background: none;
   border: none;
@@ -132,7 +136,7 @@
   align-self: center;
   margin-top: 30px;
   margin-bottom: 24px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

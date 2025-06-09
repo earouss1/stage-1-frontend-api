@@ -1,32 +1,36 @@
 import { useContext, useState } from "react";
 import "./Navigation.css";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
 import signoutButton from "../../images/signout.png";
 import logoutButton from "../../images/logout.png";
 import ToggleMobileMenu from "../ToggleMobileMenu/ToggleMobileMenu";
 import { NavLink } from "react-router-dom";
 
-function Navigation({ onSignInClick, isLoggedIn, handleSignOut, activeModal }) {
+function Navigation({
+  onSignInClick,
+  isLoggedIn,
+  handleSignOut /*activeModal*/,
+}) {
   const { currentUser } = useContext(CurrentUserContext);
   const location = useLocation();
   const isHomeNewsArticlesPage = location.pathname === "/";
   const isNewsArticlesSavedPage = location.pathname === "/saved-news";
 
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
-  // const toggleMobileMenu = () => setIsShowMobileMenu(!isShowMobileMenu);
+  const toggleMobileMenu = () => setIsShowMobileMenu(!isShowMobileMenu);
 
-  const toggleMobileMenu = () => {
-    if (activeModal) {
-      setIsShowMobileMenu(null);
-    }
-    return setIsShowMobileMenu(!isShowMobileMenu);
-  };
+  // const toggleMobileMenu = () => {
+  //   if (!activeModal) {
+  //     setIsShowMobileMenu(null);
+  //   }
+  //   return setIsShowMobileMenu(!isShowMobileMenu);
+  // };
 
   return (
     <nav
       className={`nav ${
-        isNewsArticlesSavedPage ? "nav__news-articles-saved" : ""
+        isNewsArticlesSavedPage ? "nav_news-articles_saved" : ""
       }`}
     >
       <NavLink
@@ -99,6 +103,12 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut, activeModal }) {
         <button
           className="nav-mobile-menu__savednews-button"
           onClick={toggleMobileMenu}
+          //   onClick={() => {
+          //     if (activeModal) {
+          //       setIsShowMobileMenu(null);
+          //     }
+          //     return toggleMobileMenu;
+          //   }}
         ></button>
       )}
       {isShowMobileMenu && (

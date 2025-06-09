@@ -41,7 +41,7 @@
 }
 
 .newscard__save-button-text {
-  font-family: "Roboto", "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif, "Times New Roman";
   font-weight: 500;
   font-size: 12px;
   line-height: 100%;
@@ -96,14 +96,8 @@
   background-image: url("../../images/bookmarkblack.png");
 }
 
-/* .newscard__button-and-keyword {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-} */
-
 .newscard__keyword {
-  font-family: "Roboto", Times, serif;
+  font-family: "Roboto", sans-serif, "Times New Roman";
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -142,7 +136,7 @@
 }
 
 .newscard__button-to-delete-text {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif, "Times New Roman";
   font-weight: 500;
   font-size: 12px;
   line-height: 100%;
@@ -191,7 +185,7 @@
 }
 
 .newscard__content-title {
-  font-family: "Roboto Slab", Times, serif;
+  font-family: "Roboto Slab", sans-serif, serif;
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;
@@ -211,7 +205,7 @@
 }
 
 .newscard__content-decription {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -230,7 +224,7 @@
 }
 
 .newscard__content-source {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto Slab", sans-serif, serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -247,10 +241,8 @@
 
 @media screen and (max-width: 770px) {
   .newscard {
-    max-width: 224px;
-    max-height: 420px;
-    min-width: 170px;
     max-width: 100%;
+    width: 224px;
   }
 
   .newscard__image {

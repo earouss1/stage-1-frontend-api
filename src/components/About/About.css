@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and (max-width: 392px) {
+@media screen and (max-width: 480px) {
   .about {
     flex-direction: column;
     padding: 32px 16px 106px;
@@ -99,8 +99,6 @@
   .about__content {
     width: 288px;
     margin-top: 0;
-    /* padding-left: 16px;
-    padding-right: 16px; */
   }
 
   .about__content-title {

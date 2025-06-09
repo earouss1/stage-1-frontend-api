@@ -34,7 +34,7 @@
 }
 
 .header__sub-title {
-  font-family: "Roboto", "Times New Roman", Times, serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -75,13 +75,8 @@
     background-position: center;
   }
 
-  .header__home {
-    max-width: 320px;
-  }
-
   .header__page {
     max-width: 385px;
-    /* padding: 0 20px; */
   }
 
   .header__title {
