@@ -1,39 +1,56 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import "./Navigation.css";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContexts";
 import signoutButton from "../../images/signout.png";
 import logoutButton from "../../images/logout.png";
+import ToggleMobileMenu from "../ToggleMobileMenu/ToggleMobileMenu";
+import { NavLink } from "react-router-dom";
 
-function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
+function Navigation({
+  onSignInClick,
+  isLoggedIn,
+  handleSignOut /*activeModal*/,
+}) {
   const { currentUser } = useContext(CurrentUserContext);
   const location = useLocation();
   const isHomeNewsArticlesPage = location.pathname === "/";
   const isNewsArticlesSavedPage = location.pathname === "/saved-news";
 
+  const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
+  const toggleMobileMenu = () => setIsShowMobileMenu(!isShowMobileMenu);
+
+  // const toggleMobileMenu = () => {
+  //   if (!activeModal) {
+  //     setIsShowMobileMenu(null);
+  //   }
+  //   return setIsShowMobileMenu(!isShowMobileMenu);
+  // };
+
   return (
     <nav
       className={`nav ${
-        isNewsArticlesSavedPage ? "nav__news-articles-saved" : ""
+        isNewsArticlesSavedPage ? "nav_news-articles_saved" : ""
       }`}
     >
-      <Link
+      <NavLink
         to="/"
         className={`nav__logo ${
           isNewsArticlesSavedPage ? "nav__logo-news-articles_saved" : ""
         }`}
       >
         NewsExplorer
-      </Link>
+      </NavLink>
+
       <div className="nav__rechts">
-        <Link
+        <NavLink
           to="/"
           className={`nav__rechts-home ${
-            isNewsArticlesSavedPage ? "nav__rechts-home_saved" : ""
+            !isNewsArticlesSavedPage ? "nav__rechts-home_active" : ""
           }`}
         >
           Home
-        </Link>
+        </NavLink>
         {!isLoggedIn && isHomeNewsArticlesPage ? (
           <button
             onClick={onSignInClick}
@@ -43,17 +60,17 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
             Sign in
           </button>
         ) : (
-          <div className="nav__rechts_news-articles-signin">
-            <Link
+          <div className="nav__rechts-news-articles-signin">
+            <NavLink
               to="/saved-news"
-              className={`nav__rechts_news-articles-saved ${
-                isLoggedIn && isHomeNewsArticlesPage
-                  ? "nav__rechts_news-articles-saved_home"
+              className={`nav__rechts-news-articles-saved ${
+                isLoggedIn && !isHomeNewsArticlesPage
+                  ? "nav__rechts-news-articles-saved_active"
                   : ""
               }`}
             >
               Saved articles
-            </Link>
+            </NavLink>
             <button
               className={`nav__rechts-button-signout ${
                 isLoggedIn && isHomeNewsArticlesPage
@@ -76,6 +93,36 @@ function Navigation({ onSignInClick, isLoggedIn, handleSignOut }) {
           </div>
         )}
       </div>
+      {currentUser && isHomeNewsArticlesPage && (
+        <button
+          className="nav__mobile-menu-homepage-button"
+          onClick={toggleMobileMenu}
+        ></button>
+      )}
+      {isLoggedIn && currentUser && isNewsArticlesSavedPage && (
+        <button
+          className="nav__mobile-menu-savednews-button"
+          onClick={toggleMobileMenu}
+          //   onClick={() => {
+          //     if (activeModal) {
+          //       setIsShowMobileMenu(null);
+          //     }
+          //     return toggleMobileMenu;
+          //   }}
+        ></button>
+      )}
+      {isShowMobileMenu && (
+        <ToggleMobileMenu
+          onSignInClick={onSignInClick}
+          isShowMobileMenu={isShowMobileMenu}
+          toggleMobileMenu={toggleMobileMenu}
+          handleSignout={handleSignOut}
+          isLoggedIn={isLoggedIn}
+          isHomeNewsArticlesPage={isHomeNewsArticlesPage}
+          isNewsArticlesSavedPage={isNewsArticlesSavedPage}
+          currentUser={currentUser?.username}
+        />
+      )}
     </nav>
   );
 }

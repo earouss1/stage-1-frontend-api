@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./NewsCard.css";
 import defaultnewsimage from "../../images/defaultimage.jpg";
 import { useLocation } from "react-router-dom";
@@ -69,7 +69,7 @@ function NewsCard({ item, handleDeleteNewsArticles, handleSavedNewsArticles }) {
 
       {isLoggedIn && currentUser && isNewsArticlesSavedPage && (
         <div className="newscard__button-and-keyword">
-          <span className="newscard__keyword">{item.keyword}</span>
+          <span className="newscard__keyword">{item?.keyword}</span>
           <button
             className="newscard__button-to-delete"
             type="button"
@@ -84,15 +84,15 @@ function NewsCard({ item, handleDeleteNewsArticles, handleSavedNewsArticles }) {
 
       <div className="newscard__content">
         <p className="newscard__content-date">
-          {new Date(item.publishedAt).toLocaleDateString("en-US", {
+          {new Date(item?.publishedAt).toLocaleDateString("en-US", {
             day: "numeric",
             month: "long",
             year: "numeric",
           })}
         </p>
-        <h3 className="newscard__content-title">{item.title}</h3>
-        <p className="newscard__content-decription">{item.description}</p>
-        <p className="newscard__content-source">{item.source.name}</p>
+        <h3 className="newscard__content-title">{item?.title}</h3>
+        <p className="newscard__content-decription">{item?.description}</p>
+        <p className="newscard__content-source">{item?.source?.name}</p>
       </div>
     </li>
   );

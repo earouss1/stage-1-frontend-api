@@ -1,4 +1,3 @@
-import React from "react";
 import "./SignInModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
@@ -16,11 +15,15 @@ function SignInModal({
     password: "",
   };
 
-  const { values, setValues, handleChange } = useForm(defaultValues);
+  const { values, isValid, errors, resetForm, handleChange } =
+    useForm(defaultValues);
 
   const handleSignInSubmit = (event) => {
     event.preventDefault();
-    handleSignIn(values);
+    if (isValid) {
+      handleSignIn(values);
+    }
+    resetForm(defaultValues);
   };
 
   return (
@@ -30,7 +33,7 @@ function SignInModal({
       onClose={onClose}
       onSubmit={handleSignInSubmit}
       activeModal={activeModal}
-      handleSignIn={handleSignIn}
+      // handleSignIn={handleSignIn}
       onSignInClick={onSignInClick}
       name={"sign-in"}
     >
@@ -47,6 +50,9 @@ function SignInModal({
           value={values.email || ""}
           autoComplete="on"
         />
+        {errors.email && (
+          <span className="modal__errors">Invalid email address</span>
+        )}
       </label>
       <label htmlFor="password" className="modal__label">
         Password{""}
@@ -61,9 +67,17 @@ function SignInModal({
           value={values.password || ""}
           autoComplete="on"
         />
+        {errors.password && (
+          <span className="modal__errors">Invalid password address</span>
+        )}
       </label>
       <div className="modal__buttons">
-        <button className="modal__bottons-button-submit" type="submit">
+        <button
+          className={`modal__bottons-button-submit ${
+            !isValid ? "modal__bottons-button-submit_disabled" : ""
+          }`}
+          type="submit"
+        >
           Sign in
         </button>
         <div className="modal__buttons-text-and-button">

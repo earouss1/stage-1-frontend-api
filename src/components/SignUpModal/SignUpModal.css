@@ -1,5 +1,5 @@
 .modal__buttons-button-submit {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif, serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -11,6 +11,15 @@
   height: 64px;
   border: none;
   border-radius: 100px;
-  background-color: rgba(230, 232, 235, 1);
+  background-color: rgba(47, 113, 229, 1);
   color: rgba(182, 188, 191, 1);
+  cursor: pointer;
+}
+
+.modal__buttons-button-submit_disabled {
+  background-color: rgba(230, 232, 235, 1);
+}
+
+.modal__errors-signup {
+  padding-bottom: 8px;
 }
