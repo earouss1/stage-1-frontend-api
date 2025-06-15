@@ -95,13 +95,13 @@ function Navigation({
       </div>
       {currentUser && isHomeNewsArticlesPage && (
         <button
-          className="nav-mobile-menu__toggle-button"
+          className="nav__mobile-menu-homepage-button"
           onClick={toggleMobileMenu}
         ></button>
       )}
       {isLoggedIn && currentUser && isNewsArticlesSavedPage && (
         <button
-          className="nav-mobile-menu__savednews-button"
+          className="nav__mobile-menu-savednews-button"
           onClick={toggleMobileMenu}
           //   onClick={() => {
           //     if (activeModal) {
