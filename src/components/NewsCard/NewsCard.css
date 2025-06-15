@@ -3,12 +3,14 @@
   flex-direction: column;
   position: relative;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
+  width: calc(33.333% - 10px);
   max-height: 576px;
-  max-width: 400px;
+  /* max-width: 400px; */
   background-color: rgba(255, 255, 255, 1);
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
 .newscard__image {
@@ -111,7 +113,7 @@
   z-index: 2;
   top: 24px;
   left: 24px;
-  max-width: 120px;
+  /* max-width: 120px; */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -197,7 +199,7 @@
   -webkit-box-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 352px;
+  /* max-width: 352px; */
   width: 100%;
   /* max-height: 88px; */
   padding-bottom: 16px;
@@ -212,7 +214,7 @@
   letter-spacing: 0px;
   color: rgba(26, 27, 34, 1);
   white-space: normal;
-  max-width: 352px;
+  /* max-width: 352px; */
   /* max-height: 88px; */
   margin: 0;
   padding-bottom: 30px;
@@ -235,14 +237,14 @@
   text-overflow: ellipsis;
   padding-bottom: 24px;
   margin: 0;
-  max-width: 352px;
+  /* max-width: 352px; */
   margin-top: auto;
 }
 
 @media screen and (max-width: 770px) {
   .newscard {
     max-width: 100%;
-    width: 224px;
+    /* width: 224px; */
   }
 
   .newscard__image {

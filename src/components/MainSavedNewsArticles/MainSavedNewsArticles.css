@@ -2,23 +2,29 @@
   padding-top: 64px;
   padding-bottom: 46px;
   background: rgba(245, 246, 247, 1);
-  display: flex;
+  /* display: flex; */
   position: relative;
-  padding-left: 104px;
+  /* padding-left: 104px; */
 }
 
 @media screen and (max-width: 770px) {
   .main__saved-news-articles {
     padding-top: 32px;
     padding-bottom: 32px;
-    padding-left: 56px;
+    justify-content: center;
+    /* padding-left: 40px;
+    padding-right: 40px; */
   }
 }
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 425px) {
   .main__saved-news-articles {
     padding-top: 24px;
     padding-bottom: 12px;
     background: rgba(245, 246, 247, 1);
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }

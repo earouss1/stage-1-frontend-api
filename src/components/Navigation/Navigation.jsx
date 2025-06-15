@@ -60,12 +60,12 @@ function Navigation({
             Sign in
           </button>
         ) : (
-          <div className="nav__rechts_news-articles-signin">
+          <div className="nav__rechts-news-articles-signin">
             <NavLink
               to="/saved-news"
-              className={`nav__rechts_news-articles-saved ${
+              className={`nav__rechts-news-articles-saved ${
                 isLoggedIn && !isHomeNewsArticlesPage
-                  ? "nav__rechts_news-articles-saved_active"
+                  ? "nav__rechts-news-articles-saved_active"
                   : ""
               }`}
             >

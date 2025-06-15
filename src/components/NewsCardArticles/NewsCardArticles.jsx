@@ -19,7 +19,7 @@ function NewsCardArticles({
   console.log(newsArticlesCounts);
 
   return (
-    <ul className="selected__news-articles">
+    <ul className="selected-news-articles">
       {displayedNewsArticles.map((item, index) => {
         return (
           <NewsCard

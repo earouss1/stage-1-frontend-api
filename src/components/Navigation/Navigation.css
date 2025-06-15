@@ -82,13 +82,13 @@
   cursor: pointer;
 }
 
-.nav__rechts_news-articles-signin {
+.nav__rechts-news-articles-signin {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-.nav__rechts_news-articles-saved {
+.nav__rechts-news-articles-saved {
   font-family: "Roboto", sans-serif, serif;
   font-weight: 500;
   font-size: 18px;
@@ -101,7 +101,7 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.nav__rechts_news-articles-saved_active::after {
+.nav__rechts-news-articles-saved_active::after {
   content: "";
   position: absolute;
   width: 120%;
@@ -115,7 +115,7 @@
   z-index: 2;
 }
 
-.nav__rechts_news-articles-saved_active {
+.nav__rechts-news-articles-saved_active {
   color: rgba(0, 0, 0, 1);
 }
 
